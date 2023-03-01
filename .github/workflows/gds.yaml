@@ -101,6 +101,13 @@ jobs:
         path: runs
         key: ${{ runner.os }}-runs-${{ github.run_id }}
 
+    # for debugging, show all the files
+    - name: show files
+      run: |
+        pwd
+        find ../
+        find .
+
     - name: checkout repo
       uses: actions/checkout@v3
       with:
@@ -110,7 +117,7 @@ jobs:
     - name: show files
       run: |
         pwd
-        find runs
+        find ../
         find .
 
     # install oss fpga tools
@@ -130,7 +137,7 @@ jobs:
         pwd
         ls
         ls ../
-        cp runs/wokwi/results/final/verilog/gl/seven_segment_seconds.v src
+        cp ../runs/wokwi/results/final/verilog/gl/seven_segment_seconds.v src
         cd src
         make clean
         GATES=yes make
