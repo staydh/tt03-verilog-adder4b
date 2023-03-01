@@ -89,7 +89,8 @@ jobs:
         path: 'gds_render.png'
         key: ${{ runner.os }}-png-${{ github.run_id }}
 
-# GL
+##############################################################
+# GateLevel sim
   gatelevel:
     needs: gds
     runs-on: ubuntu-latest
@@ -105,6 +106,13 @@ jobs:
       with:
         submodules: recursive
 
+    # for debugging, show all the files
+    - name: show files
+      run: |
+        pwd
+        find runs
+        find .
+
     # install oss fpga tools
     - name: install oss-cad-suite
       uses: YosysHQ/setup-oss-cad-suite@v2
@@ -119,6 +127,9 @@ jobs:
 
     - name: test
       run: |
+        pwd
+        ls
+        ls ../
         cp runs/wokwi/results/final/verilog/gl/seven_segment_seconds.v src
         cd src
         make clean
