@@ -26,7 +26,7 @@ module tb (
     assign segments = outputs[6:0];
 
     // instantiate the DUT
-    seven_segment_seconds #(.MAX_COUNT(100)) seven_segment_seconds(
+    seven_segment_seconds seven_segment_seconds(
         `ifdef GL_TEST
             .vccd1( 1'b1),
             .vssd1( 1'b0),
