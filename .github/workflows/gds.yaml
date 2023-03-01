@@ -90,7 +90,7 @@ jobs:
         key: ${{ runner.os }}-png-${{ github.run_id }}
 
 # GL
-  gate-level:
+  gatelevel:
     needs: gds
     runs-on: ubuntu-latest
     - name: restore runs cache
