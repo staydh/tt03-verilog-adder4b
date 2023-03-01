@@ -101,23 +101,16 @@ jobs:
         path: runs
         key: ${{ runner.os }}-runs-${{ github.run_id }}
 
-    # for debugging, show all the files
-    - name: show files
-      run: |
-        pwd
-        find ../
-        find .
-
-    - name: checkout repo
-      uses: actions/checkout@v3
+    - name: restore src cache
+      uses: actions/cache@v3
       with:
-        submodules: recursive
+        path: src
+        key: ${{ runner.os }}-src-${{ github.run_id }}
 
     # for debugging, show all the files
     - name: show files
       run: |
         pwd
-        find ../
         find .
 
     # install oss fpga tools
@@ -135,9 +128,7 @@ jobs:
     - name: test
       run: |
         pwd
-        ls
-        ls ../
-        cp ../runs/wokwi/results/final/verilog/gl/seven_segment_seconds.v src
+        cp runs/wokwi/results/final/verilog/gl/seven_segment_seconds.v src
         cd src
         make clean
         GATES=yes make
