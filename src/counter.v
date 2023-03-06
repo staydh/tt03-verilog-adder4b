@@ -10,6 +10,9 @@ module seven_segment_seconds #( parameter MAX_COUNT = 1000 ) (
     wire [6:0] led_out;
     assign io_out[6:0] = led_out;
 
+    // slow clock out on the last gpio
+    assign io_out[7] = second_counter[4];
+
     // external clock is 1000Hz, so need 10 bit counter
     reg [9:0] second_counter;
     reg [3:0] digit;
