@@ -19,7 +19,7 @@ VERILOG_SOURCES += $(PDK_ROOT)/sky130B/libs.ref/sky130_fd_sc_hd/verilog/primitiv
 VERILOG_SOURCES += $(PDK_ROOT)/sky130B/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v
 
 # copy the gatelevel verilog from /runs/wokwi/results/final/verilog/gl/ and commit to this directory
-VERILOG_SOURCES += $(PWD)/tb.v $(PWD)/seven_segment_seconds.v
+VERILOG_SOURCES += $(PWD)/tb.v $(PWD)/gate_level_netlist.v
 endif
 
 # TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file
