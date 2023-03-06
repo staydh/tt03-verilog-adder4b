@@ -27,6 +27,10 @@ module tb (
 
     // instantiate the DUT
     seven_segment_seconds seven_segment_seconds(
+        `ifdef GL_TEST
+            .vccd1( 1'b1),
+            .vssd1( 1'b0),
+        `endif
         .io_in  (inputs),
         .io_out (outputs)
         );
