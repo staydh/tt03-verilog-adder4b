@@ -153,7 +153,7 @@ jobs:
       if: success() || failure()
       uses: actions/upload-artifact@v3
       with:
-          name: test-vcd
+          name: gatelevel-test-vcd
           path: src/tb.vcd
 
 ##############################################################
