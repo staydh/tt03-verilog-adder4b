@@ -24,13 +24,13 @@ module adder(
   wire _6_;
   wire _7_;
   wire ci;
-  output co;
+//  output co;
   wire co;
-  input [3:0] i0;
+//  input [3:0] i0;
   wire [3:0] i0 = io_in[7:4];
-  input [3:0] i1;
+//  input [3:0] i1;
   wire [3:0] i1 = io_in[3:0];
-  output [3:0] s;
+//  output [3:0] s;
   wire [3:0] s;
   wire [4:0] t;
   assign io_out[7:4] = s;
