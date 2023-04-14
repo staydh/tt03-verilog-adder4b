@@ -27,7 +27,7 @@ module adder(
   output co;
   wire co;
   input [3:0] i0;
-  wire [3:0] i0 = io_in[[7:4];
+  wire [3:0] i0 = io_in[7:4];
   input [3:0] i1;
   wire [3:0] i1 = io_in[3:0];
   output [3:0] s;
