@@ -14,7 +14,7 @@ module tb (
 
     wire [7:0] inputs;
     wire [7:0] outputs;
-    assign io_out = outputs[7:0] 
+    assign io_out = outputs[7:0]; 
 
     adder adder (
         .io_in (inputs),
